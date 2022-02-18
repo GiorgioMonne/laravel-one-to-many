@@ -28,12 +28,12 @@
                         <tbody>
                           @foreach ($categories as $category)
                           <tr>
-                            <td>{{$categories->id}}</td>
-                            <td>{{$categories->title}}</td>
-                            <td>{{$categories->slug}}</td>
+                            <td>{{$category->id}}</td>
+                            <td>{{$category->title}}</td>
+                            <td>{{$category->slug}}</td>
                             <td>
-                              <a href="{{route("categories.show", $categories->id)}}"><button type="button" class="btn btn-info">Info</button></a>
-                              <a href="{{route("categories.edit", $categories->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>
+                              <a href="{{route("categories.show", $category->id)}}"><button type="button" class="btn btn-info">Info</button></a>
+                              <a href="{{route("categories.edit", $category->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>
                               
                               <form action="{{route("categories.destroy", $category->id)}}" method="POST">
                                   @csrf
