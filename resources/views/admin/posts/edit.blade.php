@@ -34,6 +34,19 @@
 
                             </div>
 
+                            <div>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="category">Categorie</label>
+                                        <select class="custom-select @error('content') is-invalid @enderror" name="category_id" id="category">
+                                            <option value="">Seleziona la categoria</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{$category->id}} {{old("category_id", $post->category_id == $category->id ? "selected" : "")}}">{{$category->nome}}</option>
+                                            @endforeach
+                                        </select>
+                                  </form>
+                            </div>
+
                             <div class="form-group form-check">
 
                                 @php
