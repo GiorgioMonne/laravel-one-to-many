@@ -58,10 +58,8 @@ class PostController extends Controller
         $newPost->title = $data["title"];
         $newPost->content = $data["content"];
         $newPost->published = isset($data["published"]);
+        $newPost->category_id = $data["category_id"];
 
-        // if( isset($data["published"])){
-        //     $newPost->published = true;
-        // }
 
         $slug = Str::of("$newPost->title")->slug('-');
         $count = 1;
@@ -75,6 +73,10 @@ class PostController extends Controller
         $newPost->save();
         
         return redirect()->route("posts.show", $newPost->id);
+
+        // if( isset($data["published"])){
+        //     $newPost->published = true;
+        // }
     }
 
     /**

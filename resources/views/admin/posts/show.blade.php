@@ -9,7 +9,13 @@
                         Titolo : {{$post->title}}
                     </div>
 
-                    <div class="card-body  m">
+                    <div class="card-body ">
+                        <a href="{{route("posts.edit", $post->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>     
+                        <form action="{{route("posts.destroy", $post->id)}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger mt-3">Elimina</button>
+                        </form>
 
                         <div>
                             Stato :
@@ -19,6 +25,13 @@
                                 <span class="badge badge-secondary">Trade</span>
                             @endif
                         </div>
+
+                        @if ($post->category)
+                            <div class="mb-3">
+                                <strong>Categoria :</strong>
+                                {{$post->category->nome}}
+                            </div>
+                        @endif
 
                         {{$post->content}}
                     </div>

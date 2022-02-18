@@ -37,7 +37,7 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="category">Categorie</label>
-                                        <select class="custom-select" name="category_id" id="category">
+                                        <select class="custom-select @error('content') is-invalid @enderror" name="category_id" id="category">
                                             <option value="">Seleziona la categoria</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{$category->id}} {{old("category_id" == $category->id ? "selected" : "")}}">{{$category->nome}}</option>
