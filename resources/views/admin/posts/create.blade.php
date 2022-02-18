@@ -33,6 +33,19 @@
 
                             </div>
 
+                            <div>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="category">Categorie</label>
+                                        <select class="custom-select" name="category_id" id="category">
+                                            <option value="">Seleziona la categoria</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{$category->id}} {{old("category_id" == $category->id ? "selected" : "")}}">{{$category->nome}}</option>
+                                            @endforeach
+                                        </select>
+                                  </form>
+                            </div>
+
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input @error('checkbox') is-invalid @enderror" id="published" name="published" {{old('published') ? 'checked' : ''}}>
                                 <label for="published" class="form-check-label">Pubblica</label> 
