@@ -10,6 +10,13 @@
                     </div>
 
                     <div class="card-body ">
+
+                        <div class="mb-3">
+                            @if ($post->image)
+                                <img src="{{asset("storage/{{$post->image}}")}}" alt="">
+                            @endif
+                        </div>
+
                         <a href="{{route("posts.edit", $post->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>     
                         <form action="{{route("posts.destroy", $post->id)}}" method="POST">
                             @csrf
@@ -17,7 +24,7 @@
                             <button type="submit" class="btn btn-danger mt-3">Elimina</button>
                         </form>
 
-                        <div>
+                        <div mb-3>
                             Stato :
                             @if ($post->published)
                                 <span class="badge badge-success">Pubblished</span>
