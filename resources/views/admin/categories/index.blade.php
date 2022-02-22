@@ -29,7 +29,7 @@
                           @foreach ($categories as $category)
                           <tr>
                             <td>{{$category->id}}</td>
-                            <td>{{$category->title}}</td>
+                            <td>{{$category->nome}}</td>
                             <td>{{$category->slug}}</td>
                             <td>
                               <a href="{{route("categories.show", $category->id)}}"><button type="button" class="btn btn-info">Info</button></a>

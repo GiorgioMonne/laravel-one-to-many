@@ -44,6 +44,12 @@
 
                     </ul>
 
+                    <ul class="navbar-nav ">
+                        
+                        <a class="nav-link" href="{{route("categories.index")}}">Categorie</a>
+
+                    </ul>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
