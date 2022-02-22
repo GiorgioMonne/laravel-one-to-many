@@ -13,7 +13,7 @@
 
                         <div class="mb-3">
                             @if ($post->image)
-                                <img src="{{asset("storage/{{$post->image}}")}}" alt="">
+                                <img src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}">
                             @endif
                         </div>
 

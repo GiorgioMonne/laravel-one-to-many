@@ -11,7 +11,7 @@
 
                     <div class="card-body ">
 
-                        <form action="{{route("posts.update", $post->id)}}" method="POST">
+                        <form action="{{route("posts.update", $post->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method("PUT")
                             <div class="form-group">
@@ -57,6 +57,19 @@
                                 <label for="published" class="form-check-label">Pubblica</label> 
 
                                 @error('checkbox')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                @if ($post->image)
+                                 <img width="100" src="{{asset("storage/{$post->image}")}}" alt="{{$post->title}}">
+                                @endif
+                                
+                                <input type="file"   id="image" name="image">
+                                <label  for="image">Aggiungi un immagine</label>   
+                                
+                                @error('image')
                                     <div class="alert alert-danger">{{$message}}</div>
                                 @enderror
                             </div>

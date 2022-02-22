@@ -75,6 +75,7 @@ class PostController extends Controller
         $newPost->save();
 
         if( isset($data['image']) ){
+
             $path_image = Storage::put("uploads", $data['image']);
             $newPost->image = $path_image;
         }
@@ -152,6 +153,13 @@ class PostController extends Controller
         // else{
         //     $post->published = false;
         // }
+        if( isset($data['image']) ){
+
+            Storage::delete($post->image);
+
+            $path_image = Storage::put("uploads", $data['image']);
+            $post->image = $path_image;
+        }
 
         
         $post->save();

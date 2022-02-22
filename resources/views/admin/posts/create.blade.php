@@ -57,9 +57,8 @@
                             </div>
 
                             <div class="form-group custom-files">
-                                <input type="file" class="custom-file-input"  id="image" name="image">
-                                <label class="custom-file-label" for="image">Aggiungi un immagine</label>
-                                
+                                <input type="file"   id="image" name="image">
+                                <label  for="image">Aggiungi un immagine</label>                               
                             </div>
 
                             <button type="submit" class="btn btn-primary">Crea</button>
