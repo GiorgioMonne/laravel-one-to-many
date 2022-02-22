@@ -11,7 +11,7 @@
 
                     <div class="card-body ">
 
-                        <form action="{{route("posts.store")}}" method="POST">
+                        <form action="{{route("posts.store")}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                               <label for="exampleInputEmail1">Titolo</label>
@@ -45,6 +45,7 @@
                                         </select>
                                   </form>
                             </div>
+                            
 
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input @error('checkbox') is-invalid @enderror" id="published" name="published" {{old('published') ? 'checked' : ''}}>
@@ -55,7 +56,13 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group custom-files">
+                                <input type="file" class="custom-file-input"  id="image" name="image">
+                                <label class="custom-file-label" for="image">Aggiungi un immagine</label>
+                                
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Crea</button>
                         </form>
                         
                     </div>
